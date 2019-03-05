@@ -3,5 +3,18 @@
     "@babel/preset-env",
     "@babel/preset-react"
   ],
-  "plugins": []
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    [ 
+      "import", 
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }
+    ]
+  ]
 }
+
+//TODO: Implement babel plugin import properly
