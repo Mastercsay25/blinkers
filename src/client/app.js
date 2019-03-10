@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
-
+  
 import HomePage from "./components/HomePage";
+import WishlistPage from "./components/WishlistPage";
+import CartPage from "./components/CartPage";
+import BookItemPage from "./components/BookItemPage";
 
 const jsx = (
   <div>
-    <HomePage/>
+    <BookItemPage/>
   </div>
 );
 
