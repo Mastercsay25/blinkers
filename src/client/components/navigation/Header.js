@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Layout, Col, Row, Dropdown, Button, Icon } from "antd";
 
 const { Header } = Layout;
@@ -14,7 +15,9 @@ const MyHeader = (props) => (
         />
       </Col>
       <Col span={4} offset={6}>
-        <h1> Nabu </h1>
+        <Link to="/">
+          <h1> Nabu </h1>
+        </Link>
       </Col>
       <Col span={4} offset={6}>
         <Dropdown overlay={props.showLogin}>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import WishlistItem from "./BookItem";
+import WishlistItem from "./items/BookItem";
 
 const WishlistList = () => (
   <div>
