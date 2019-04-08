@@ -6,7 +6,7 @@ const { Content } = Layout;
 
 
 
-class CartPage extends React.Component {
+class SettingsPage extends React.Component {
   state = {
     collapsed: false,
   };
@@ -28,7 +28,7 @@ class CartPage extends React.Component {
               <h2>Change Password</h2>
               <span>Old: <input></input></span>
               <span>New: <input></input></span>
-              <h2>Delete Account</h2>
+              <h4>Delete Account</h4>
             </div>
           </Col>
         </Row>
@@ -37,4 +37,4 @@ class CartPage extends React.Component {
   }
 };
 
-export default CartPage;
+export default SettingsPage;

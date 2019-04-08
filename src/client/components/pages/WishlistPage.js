@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Row, Col } from "antd";
+import { Layout, List} from "antd";
 
 import LoginForm from "../navigation/LoginForm";
 import WishlistFilters from "../lists/modifiers/WishlistFilters";
@@ -27,16 +27,7 @@ class WishlistPage extends React.Component {
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
       }}>
-        <Row>
-          <Col>
-            <WishlistFilters />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <WishlistList />
-          </Col>
-        </Row>
+        <List/>
       </Content>
     );
   };

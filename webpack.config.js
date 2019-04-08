@@ -8,7 +8,7 @@ module.exports = (env) => {
   const CSSExtract = new MiniCssExtractPlugin({
     filename: "styles.css"
   });
-  
+
   return {
     entry: ["@babel/polyfill", "./src/client/app.js"],
     output: {
@@ -22,7 +22,7 @@ module.exports = (env) => {
         use: {
           loader: "babel-loader",
         }
-      },{
+      }, {
         test: /\.s?css$/,
         use: [
           {
@@ -42,14 +42,35 @@ module.exports = (env) => {
             }
           }
         ]
+      }, {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              sourceMap: true
+            }
+          }, {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          }, {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+              javascriptEnabled: true
+            }
+          }
+        ]
       }]
     },
-    plugins: [ CSSExtract ],
+    plugins: [CSSExtract],
     devtool: isProduction ? "source-map" : "inline-source-map",
     devServer: {
       contentBase: path.join(__dirname, "public"),
       historyApiFallback: true,
       publicPath: "/dist/"
     }
-  } 
+  }
 }

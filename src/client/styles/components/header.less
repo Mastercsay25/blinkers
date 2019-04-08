@@ -1,0 +1,51 @@
+.header {
+  background-color: #fff;
+  padding: 0;
+}
+
+//--- Menu Icon ---
+.header__expand-icon {
+  font-size: 1.8rem;
+  line-height: 6.4rem;
+  padding: 0 2.4rem;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.header__expand-icon:hover {
+  color: #1890ff;
+}
+
+//--- Site logo ---
+.header__logo {
+  font-family: "Merienda", cursive;
+  padding-left: @m-size;
+  text-decoration: none;
+}
+
+
+.header__logo--color-green {
+  margin: 0;
+  color: @green-5;
+}
+
+//--- Search bar ---
+.header__search {
+  flex-grow: 1;
+}
+
+//--- Button ---
+.header__button {
+  margin-right: @m-size;
+}
+
+//--- Containers ---
+.header__container { 
+  display: flex;
+  align-items: center;
+}
+
+.header__container--login {
+  justify-content: flex-end;
+}
+

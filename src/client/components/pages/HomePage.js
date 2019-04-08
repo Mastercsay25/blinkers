@@ -16,10 +16,6 @@ class HomePage extends React.Component {
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
       }}>
-        <AutoComplete>
-          <Input suffix={<Icon type="search" />} />
-        </AutoComplete>
-
         <HorizontalBookList />
         <HorizontalBookList />
         <HorizontalBookList />

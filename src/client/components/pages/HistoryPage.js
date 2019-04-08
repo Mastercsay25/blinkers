@@ -1,11 +1,10 @@
 import React from "react";
 
-import { Layout, Row, Col, Button } from "antd";
+import { Layout, Row, Col } from "antd";
 
 const { Content } = Layout;
 
 import BookItem from "../lists/items/BookItem";
-// import from "./";
 
 class HistoryPage extends React.Component {
   state = {
