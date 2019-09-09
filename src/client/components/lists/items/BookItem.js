@@ -2,7 +2,7 @@ import React from "react";
 
 import { Row, Col, Button } from "antd";
 
-const WishlistItem = () => (
+const BookItem = () => (
   <div>
     <Row>
       <Col>
@@ -20,4 +20,4 @@ const WishlistItem = () => (
   </div>
 );
 
-export default WishlistItem;
+export default BookItem;
