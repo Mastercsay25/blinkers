@@ -1,31 +1,37 @@
 import React from "react";
 
-import { Layout, Row, Col } from "antd";
+import { Layout } from "antd";
+
+import HistoryList from "../lists/HistoryList";
+import books from "../../utils/books";
 
 const { Content } = Layout;
-
-import BookItem from "../lists/items/BookItem";
 
 class HistoryPage extends React.Component {
   state = {
     collapsed: false,
   };
 
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
+
+  showLogin = () => (
+    <LoginForm />
+  );
+
   render() {
     return (
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
       }}>
-        <Row>
-          <Col>
-            <BookItem />
-            <BookItem />
-            <BookItem />
-          </Col>
-        </Row>
+        <h1>Shopping History</h1>
+        <HistoryList userList={books} />
       </Content>
     );
-  }
+  };
 };
 
 export default HistoryPage;

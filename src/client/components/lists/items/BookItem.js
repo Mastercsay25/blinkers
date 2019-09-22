@@ -1,23 +1,19 @@
 import React from "react";
 
-import { Row, Col, Button } from "antd";
+import { Link } from "react-router-dom";
 
-const BookItem = () => (
-  <div>
-    <Row>
-      <Col>
-        <img src="" alt="Book" />
-      </Col>
-      <Col>
-        <h4>Book 1</h4>
-        <p>$10.00</p>
-      </Col>
-      <Col>
-        <Button type="primary">Place in Cart</Button>
-        <Button type="danger">Delete</Button>
-      </Col>
-    </Row>
-  </div>
+import { List, Card } from "antd";
+
+const { Meta } = Card; 
+
+const BookItem = ({item}) => (
+  <List.Item>
+    <Link to={`/book/${item.id}`}>
+      <Card className="bookCard" hoverable cover={<img className="previewImg" src={item.src} style={{ width: "100%" }} />}>
+        <Meta title={item.title} description={`by ${item.author}`} />
+      </Card>
+    </Link>
+  </List.Item>
 );
 
 export default BookItem;

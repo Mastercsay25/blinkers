@@ -14,7 +14,7 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form onSubmit={this.handleSubmit} className="login-form ">
         <Form.Item>
           {getFieldDecorator('userName', {
             rules: [{ required: true, message: 'Please input your username!' }],
@@ -31,10 +31,10 @@ class LoginForm extends React.Component {
         </Form.Item>
         <Form.Item>
           <a className="login-form-forgot" href="">Forgot password</a>
+          Or <a href="">register now!</a>
           <Button type="primary" htmlType="submit" className="login-form-button">
             Log in
           </Button>
-          Or <a href="">register now!</a>
         </Form.Item>
       </Form>
     );

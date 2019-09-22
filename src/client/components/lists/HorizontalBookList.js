@@ -1,39 +1,23 @@
 import React from "react";
 import { List, Card } from "antd";
 
-const data = [
-  {
-    title: 'Title 1',
-  },
-  {
-    title: 'Title 2',
-  },
-  {
-    title: 'Title 3',
-  },
-  {
-    title: 'Title 4',
-  },
-  {
-    title: 'Title 5',
-  },
-  {
-    title: 'Title 6',
-  },
-];
+import BookItem from "./items/BookItem";
 
-const HorizontalBookList = () => (
-  <List
-    grid={{
-      gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3,
-    }}
-    dataSource={data}
-    renderItem={item => (
-      <List.Item>
-        <Card title={item.title}>Card content</Card>
-      </List.Item>
-    )}
-  ></List>
+const { Meta } = Card;
+
+const HorizontalBookList = (props) => (
+  <div>
+    <h2>{props.title}</h2>
+    <List
+      grid={{
+        gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3,
+      }}
+      dataSource={props.books}
+      renderItem={item => (
+        <BookItem item={item}/>
+      )}
+    ></List>
+  </div>
 );
 
 export default HorizontalBookList;

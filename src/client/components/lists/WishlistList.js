@@ -1,13 +1,17 @@
 import React from "react";
 
-import WishlistItem from "./items/BookItem";
+import WishlistItem from "./items/WishlistItem";
+import { List } from "antd";
 
-const WishlistList = () => (
-  <div>
-    <WishlistItem />
-    <WishlistItem />
-    <WishlistItem />
-  </div>
+const WishlistList = (props) => (
+  <List
+    itemLayout="vertical"
+    size="large"
+    dataSource={props.userList}
+    renderItem={item => (
+      <WishlistItem item={item}/>
+    )}
+  />
 );
 
 export default WishlistList;

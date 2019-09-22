@@ -1,6 +1,7 @@
 import React from "react";
-import { Layout, Icon, AutoComplete, Input } from "antd";
+import { Layout } from "antd";
 
+import books from "../../utils/books";
 import HorizontalBookList from "../lists/HorizontalBookList";
 
 const { Content } = Layout;
@@ -16,9 +17,9 @@ class HomePage extends React.Component {
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
       }}>
-        <HorizontalBookList />
-        <HorizontalBookList />
-        <HorizontalBookList />
+        <HorizontalBookList books={books} title="New Releases"/>
+        <HorizontalBookList books={books} title="Most Recommended"/>
+        <HorizontalBookList books={books} title="Suggestions for You"/>
       </Content>
     );
   };

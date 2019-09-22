@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Layout } from "antd";
-import createHistory from "history/createBrowserHistory";
+import { createBrowserHistory } from "history";
 
 import NavDrawer from "./../components/navigation/NavDrawer";
 import LoginForm from "./../components/navigation/LoginForm";
@@ -12,11 +12,12 @@ import WishlistPage from "./../components/pages/WishlistPage";
 import CartPage from "./../components/pages/CartPage";
 import BookItemPage from "./../components/pages/BookItemPage";
 import SettingsPage from "./../components/pages/SettingsPage";
+import CategoriesPage from "./../components/pages/CategoriesPage";
 import CategoryPage from "./../components/pages/CategoryPage";
 import HistoryPage from "./../components/pages/HistoryPage";
 import NotFoundPage from "./../components/pages/NotFoundPage";
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 class AppRouter extends React.Component {
   state = {
@@ -30,7 +31,7 @@ class AppRouter extends React.Component {
   }
 
   showLogin = () => (
-    <LoginForm />
+    <LoginForm/>
   );
 
   render() {
@@ -41,10 +42,11 @@ class AppRouter extends React.Component {
           <Layout>
             <Header collapsed={this.state.collapsed} toggle={this.toggle} showLogin={this.showLogin} />
             <Switch>
-              <Route path="/" component={HomePage} exact isPublic />
+              <Route exact path="/" component={HomePage} isPublic />
               <Route path="/wishlist" component={WishlistPage} />
               <Route path="/cart" component={CartPage} />
               <Route path="/book/:id" component={BookItemPage} />
+              <Route exact path="/categories/" component={CategoriesPage} />
               <Route path="/categories/:cat" component={CategoryPage} />
               <Route path="/history" component={HistoryPage} />
               <Route path="/settings" component={SettingsPage} />

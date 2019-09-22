@@ -24,15 +24,16 @@ const NavDrawer = (props) => (
         key="sub1"
         title={<span><Icon type="read" /><span>Categories</span></span>}
       >
-        <Menu.Item key="a"><Link to="/categories/self-care">Self-Care</Link></Menu.Item>
-        <Menu.Item key="b"><Link to="/categories/biography">Biography</Link></Menu.Item>
-        <Menu.Item key="c"><Link to="/categories/non-fiction">Non-Fiction</Link></Menu.Item>
+        <Menu.Item key="a"><Link to="/categories/self-help">Self-Help</Link></Menu.Item>
+        <Menu.Item key="b"><Link to="/categories/biographies">Biographies</Link></Menu.Item>
+        <Menu.Item key="c"><Link to="/categories/history">History</Link></Menu.Item>
         <Menu.Item key="d"><Link to="/categories/fantasy">Fantasy</Link></Menu.Item>
-        <Menu.Item key="e"><Link to="/categories/sci-fi">Sci-Fi</Link></Menu.Item>
+        <Menu.Item key="e"><Link to="/categories/religion">Religion</Link></Menu.Item>
         <Menu.Item key="f"><Link to="/categories/science">Science</Link></Menu.Item>
         <Menu.Item key="g"><Link to="/categories/computing">Computing</Link></Menu.Item>
-        <Menu.Item key="h"><Link to="/categories/economics">Economics</Link></Menu.Item>
+        <Menu.Item key="h"><Link to="/categories/business">Travel</Link></Menu.Item>
         <Menu.Item key="i"><Link to="/categories/language">Language</Link></Menu.Item>
+        <Menu.Item key="j"><Link to="/categories">More...</Link></Menu.Item>
       </SubMenu>
       <Menu.Item key="1">
         <Link to="/wishlist">

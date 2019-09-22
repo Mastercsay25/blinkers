@@ -2,8 +2,8 @@ import React from "react";
 import { Layout, List} from "antd";
 
 import LoginForm from "../navigation/LoginForm";
-import WishlistFilters from "../lists/modifiers/WishlistFilters";
 import WishlistList from "../lists/WishlistList";
+import books from "../../utils/books";
 
 const { Content } = Layout;
 
@@ -27,7 +27,10 @@ class WishlistPage extends React.Component {
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
       }}>
-        <List/>
+        <h1>Wishlist</h1>
+        <WishlistList userList={books}/>
+        <div>
+        </div>
       </Content>
     );
   };
