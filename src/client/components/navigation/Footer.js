@@ -6,9 +6,11 @@ const { Footer } = Layout;
 const MyFooter = () => (
   <Footer className="footer">
     <Row>
+    <a className="footer__link" href="/">Language: English</a>
       <a className="footer__link" href="/">About</a>
       <a className="footer__link" href="/">Help</a>
-      <a className="footer__link" href="/">Language: English</a>
+      <a className="footer__link" href="/">Terms & Conditions</a>
+      <a className="footer__link" href="/">Privacy</a>
     </Row>
     <Row>
       All Rights Reserved (C) 2019.

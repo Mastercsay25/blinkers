@@ -1,0 +1,12 @@
+{
+  "test": {
+    "port": 3000,
+    "MONGODB_URI": "mongodb://localhost:27017/BlinkersTestDB",
+    "JWT_SECRET": "sRzltef9DZZuOwOll7IAtZPtfWsDznMLLt6BcVNHcZwHjZQ3NDpYBiTIlPVl3sHX3j9nYx7cozT6xLXRkZo5xI3Oqi0/oqfnUZQmUyjh093BQFFPm7gBxASC0GEGU+Uc4caepMyYAN1UfH1RdJaYhj+GSPtxRtBCpyQtuyxpbbhg9rhNonzEhL1Cj+LtC6u+5BTHZ7/q0a0HjIeTZhsFgSDmvhaWdK69lheRm+LHZsAyx9cOhGc10XlYvZH5+T1/x8cmjOOksFxxtjIeKGP+cCz/ve+PHOjxjah5OsvguWJGNgnHqs0TI9SR26BCln2ICM+FvxA0H2o+GuRNJeKyVA=="
+  },
+  "development": {
+    "port": 3000,
+    "MONGODB_URI": "mongodb://localhost:27017/BlinkersDB",
+    "JWT_SECRET": "DNBLC2Du9cN3CzZeaVZZ/2iF8+hldGje7Vw8fDLl1BBrLZ7PmGbASNiPa5KatwBezlll/yomn6D0RuxOxOZiL3EII2q7WB/5qovyXpKRS2SOoBNVNJJp9aR3SsXwL3i9Dfy8boZm9FEjOeKYCWGmwB3jf1B31aQT0clZgGYgHCvHzp+BBvLlxlUhptzgeia0nrhvUUFATRvtCrOZ5/KehS0yZzIdngNh1Ge0dpxXl0abqpSORAgMvslqBsua2HkRZWetGuxzg2dVtfem76qZ2XaXfiAClTGQ7GsNVeSVYozwWjiNFk/OfAp82+33mM2wgcsd+O7fcLnyazBe3rNvJg=="
+  }
+}

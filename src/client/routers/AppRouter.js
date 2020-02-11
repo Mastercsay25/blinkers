@@ -30,10 +30,6 @@ class AppRouter extends React.Component {
     });
   }
 
-  showLogin = () => (
-    <LoginForm/>
-  );
-
   render() {
     return (
       <BrowserRouter>
