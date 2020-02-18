@@ -46,7 +46,7 @@ const books = [
   },
   {
     id: "1234",
-    title: "A Seriers of Unfortunate Events",
+    title: "A Series of Unfortunate Events",
     src: "resources/SeriesUnfortunateCover.jpg",
     author: "Lemony Snicket",
     category: "Fantasy",

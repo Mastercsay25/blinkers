@@ -8,12 +8,14 @@ import {
   Button,
   Icon,
   AutoComplete,
-  Input
+  Input,
+  Form
 } from "antd";
 const { Header } = Layout;
 import { connect } from "react-redux";
-
 import { logIn, logOut } from "./../../actions/auth";
+import { setTextFilter } from "./../../actions/filters";
+import selectBooks from "./../../selectors/books";
 import LoginForm from "./LoginForm";
 
 export class SiteHeader extends React.Component {
@@ -21,7 +23,11 @@ export class SiteHeader extends React.Component {
 
   renderAuthButton = () => {
     if (Object.keys(this.props.auth).length > 0) {
-      return <Button onClick={this.onLogOut} className="header__button">Logout</Button>;
+      return (
+        <Button onClick={this.onLogOut} className="header__button">
+          Logout
+        </Button>
+      );
     }
     return (
       <Dropdown overlay={this.showLogin}>
@@ -36,7 +42,11 @@ export class SiteHeader extends React.Component {
 
   onLogOut = () => {
     this.props.logOut();
-  }
+  };
+
+  onTextChange = value => {
+    this.props.setTextFilter(value);
+  };
 
   render() {
     return (
@@ -53,7 +63,13 @@ export class SiteHeader extends React.Component {
             </Link>
           </Col>
           <Col span={12} className="header__container">
-            <AutoComplete className="header__search">
+            <AutoComplete
+              dataSource={this.props.books}
+              className="header__search"
+              value={this.props.filters.text}
+              onChange={this.onTextChange}
+              placeholder="Search the library..."
+            >
               <Input suffix={<Icon type="search" />} />
             </AutoComplete>
           </Col>
@@ -66,15 +82,18 @@ export class SiteHeader extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  auth: state.auth
+const mapStateToProps = state => ({
+  auth: state.auth,
+  books: selectBooks(state.books, state.filters).map(book => book.title),
+  filters: state.filters
 });
 
 const mapDispatchToProps = dispatch => ({
   logIn: (username, password) => {
     dispatch(logIn(username, password));
   },
-  logOut: () => dispatch(logOut())
+  logOut: () => dispatch(logOut()),
+  setTextFilter: text => dispatch(setTextFilter(text))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SiteHeader);

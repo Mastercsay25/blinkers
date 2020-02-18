@@ -19,7 +19,6 @@ class HomePage extends React.Component {
     return false;
   };
 
-
   render() {
     return (
       <Content
