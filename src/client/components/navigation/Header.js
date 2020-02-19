@@ -68,7 +68,7 @@ export class SiteHeader extends React.Component {
               className="header__search"
               value={this.props.filters.text}
               onChange={this.onTextChange}
-              placeholder="Search the library."
+              placeholder="Search the library..."
             >
               <Input suffix={<Icon type="search" />} />
             </AutoComplete>
