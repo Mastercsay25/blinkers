@@ -2,7 +2,7 @@ const books = [
   {
     id: "6789",
     title: "Harry Potter and the Goblet of Fire",
-    src: "resources/HarryPotterGlobetCover.jpg",
+    src: "resources/fantasy/HarryPotterGlobetCover.jpg",
     author: "J.K. Rowling",
     category: "Fantasy",
     cost: "$20.00",
@@ -11,7 +11,7 @@ const books = [
   {
     id: "5678",
     title: "Chronicles of Narnia",
-    src: "resources/ChroniclesNarniaCover.jpg",
+    src: "resources/fantasy/ChroniclesNarniaCover.jpg",
     author: "C.S Lewis",
     category: "Fantasy",
     cost: "$25.00",
@@ -20,7 +20,7 @@ const books = [
   {
     id: "4567",
     title: "Lord of the Rings",
-    src: "resources/LordRingsCover.jpg",
+    src: "resources/fantasy/LordRingsCover.jpg",
     author: "J.R.R. Tolkien",
     category: "Fantasy",
     cost: "$35.00",
@@ -29,7 +29,7 @@ const books = [
   {
     id: "3456",
     title: "The Name of the Wind",
-    src: "resources/NameWindCover.jpg",
+    src: "resources/fantasy/NameWindCover.jpg",
     author: "Patrick Rothfuss",
     category: "Fantasy",
     cost: "$42.00",
@@ -38,7 +38,7 @@ const books = [
   {
     id: "2345",
     title: "The Wheel of Time",
-    src: "resources/WheelTimeCover.jpg",
+    src: "resources/fantasy/WheelTimeCover.jpg",
     author: "Robert Jordan",
     category: "Fantasy",
     cost: "$10.00",
@@ -47,7 +47,7 @@ const books = [
   {
     id: "1234",
     title: "A Series of Unfortunate Events",
-    src: "resources/SeriesUnfortunateCover.jpg",
+    src: "resources/fantasy/SeriesUnfortunateCover.jpg",
     author: "Lemony Snicket",
     category: "Fantasy",
     cost: "$12.00",

@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Layout, Row, Col, Icon, Button } from "antd";
 
 import LoginForm from "../navigation/LoginForm";
@@ -7,21 +8,11 @@ import HorizontalBookList from "../lists/HorizontalBookList";
 const { Content } = Layout;
 
 class BookItemPage extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
-
-  showLogin = () => (
-    <LoginForm />
-  );
+  bookId = this.props.location.pathname.split("/")[2];
+  currentBook = this.props.books
 
   render() {
+    console.log(this.currentBook);
     return (
       <Content style={{
         margin: "24px 16px", padding: 24, background: "#fff", minHeight: 720
@@ -51,4 +42,8 @@ class BookItemPage extends React.Component {
   };
 };
 
-export default BookItemPage;
+const mapStateToProps = (state) => ({
+  books: state.books
+});
+
+export default connect(mapStateToProps, undefined)(BookItemPage);

@@ -46,6 +46,7 @@ class AppRouter extends React.Component {
               <Route path="/categories/:cat" component={CategoryPage} />
               <Route path="/history" component={HistoryPage} />
               <Route path="/settings" component={SettingsPage} />
+              <Route path = "/not-found" component={NotFoundPage} />
               <Route component={NotFoundPage} />
             </Switch>
             <Footer />

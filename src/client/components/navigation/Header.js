@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import {
   Layout,
   Col,
@@ -17,6 +17,8 @@ import { logIn, logOut } from "./../../actions/auth";
 import { setTextFilter } from "./../../actions/filters";
 import selectBooks from "./../../selectors/books";
 import LoginForm from "./LoginForm";
+
+const Search = Input.Search;
 
 export class SiteHeader extends React.Component {
   showLogin = () => <LoginForm onSubmit={this.onSubmit} />;
@@ -48,6 +50,18 @@ export class SiteHeader extends React.Component {
     this.props.setTextFilter(value);
   };
 
+  onQuerySubmit = queryBook => {
+    const books = this.props.books
+
+    const index = books.findIndex(book => book.title === queryBook)
+
+    if (index === -1) {
+      this.props.history.push("/not-found")
+    }
+
+    this.props.history.push(`/book/${books[index].id}`);
+  };
+
   render() {
     return (
       <Header className="header">
@@ -59,18 +73,20 @@ export class SiteHeader extends React.Component {
               onClick={this.props.toggle}
             />
             <Link className="header__logo" to="/">
-              <h1 className="header__logo--color-green"> Blinkers </h1>
+              <h1 className="header__logo--color-blue"> Blinkers </h1>
             </Link>
           </Col>
           <Col span={12} className="header__container">
             <AutoComplete
-              dataSource={this.props.books}
+              dataSource={this.props.booksTitles}
               className="header__search"
               value={this.props.filters.text}
               onChange={this.onTextChange}
+              onSelect={this.onQuerySubmit}
+              onSubmit={this.onQuerySubmit}
               placeholder="Search the library..."
             >
-              <Input suffix={<Icon type="search" />} />
+              <Search onSearch={this.onQuerySubmit} />
             </AutoComplete>
           </Col>
           <Col span={6} className="header__container header__container--login">
@@ -84,7 +100,8 @@ export class SiteHeader extends React.Component {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  books: selectBooks(state.books, state.filters).map(book => book.title),
+  books: state.books,
+  booksTitles: selectBooks(state.books, state.filters).map(book => book.title),
   filters: state.filters
 });
 
@@ -96,4 +113,6 @@ const mapDispatchToProps = dispatch => ({
   setTextFilter: text => dispatch(setTextFilter(text))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SiteHeader);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SiteHeader)
+);
