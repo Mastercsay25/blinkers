@@ -2,7 +2,7 @@ const books = [
   {
     id: "6789",
     title: "Harry Potter and the Goblet of Fire",
-    src: "resources/fantasy/HarryPotterGlobetCover.jpg",
+    src: "resources/fantasy/HarryPotterGobletCover.jpg",
     author: "J.K. Rowling",
     category: "Fantasy",
     cost: "$20.00",
